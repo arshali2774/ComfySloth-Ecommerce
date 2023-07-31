@@ -13,7 +13,6 @@ const filter_reducer = (state, action) => {
   if (action.type === LOAD_PRODUCTS) {
     let maxPrice = action.payload.map((p) => p.price);
     maxPrice = Math.max(...maxPrice);
-    console.log(maxPrice);
     return {
       ...state,
       all_products: [...action.payload],
@@ -48,19 +47,15 @@ const filter_reducer = (state, action) => {
     let tempProducts = [...filtered_products];
     if (sort === 'price-lowest') {
       tempProducts = tempProducts.sort((a, b) => a.price - b.price);
-      console.log('price-lowest');
     }
     if (sort === 'price-highest') {
       tempProducts = tempProducts.sort((a, b) => b.price - a.price);
-      console.log('price-highest');
     }
     if (sort === 'name-a') {
       tempProducts = tempProducts.sort((a, b) => a.name.localeCompare(b.name));
-      console.log('name-a');
     }
     if (sort === 'name-z') {
       tempProducts = tempProducts.sort((a, b) => b.name.localeCompare(a.name));
-      console.log('name-z');
     }
     return {
       ...state,

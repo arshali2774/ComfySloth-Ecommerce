@@ -41,7 +41,7 @@ function App() {
         />
         <Route
           path='/checkout'
-          element=<Checkout />
+          element=<PrivateRoute component=<Checkout /> />
         />
         <Route
           path='*'

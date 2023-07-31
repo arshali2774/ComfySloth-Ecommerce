@@ -12,16 +12,26 @@ import { Toaster } from 'react-hot-toast';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// ! domain dev-pyp7yb6b16v7qeoa.us.auth0.com
-// ! client-id FffizS7952Diw7kdRsgiG8jLfYfSEhOT
+const domain = 'dev-pyp7yb6b16v7qeoa.us.auth0.com';
+const client_id = 'AtUO7TCpO6jBtEVzuN51aRFVKU7qUFtl';
 
 root.render(
-  <ProductsProvider>
-    <FilterProvider>
-      <CartProvider>
-        <Toaster />
-        <App />
-      </CartProvider>
-    </FilterProvider>
-  </ProductsProvider>
+  <Auth0Provider
+    domain={domain}
+    clientId={client_id}
+    authorizationParams={{
+      redirect_uri: window.location.origin,
+    }}
+  >
+    <UserProvider>
+      <ProductsProvider>
+        <FilterProvider>
+          <CartProvider>
+            <Toaster />
+            <App />
+          </CartProvider>
+        </FilterProvider>
+      </ProductsProvider>
+    </UserProvider>
+  </Auth0Provider>
 );

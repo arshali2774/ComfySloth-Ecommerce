@@ -3,7 +3,6 @@ export const formatPrice = (number) => {
     style: 'currency',
     currency: 'INR',
   }).format(number / 10);
-  console.log(newNumber);
   return newNumber;
 };
 

@@ -27,7 +27,6 @@ const SingleProductPage = () => {
     fetchSingleProduct(`${url}${id}`);
   }, [id]);
   useEffect(() => {
-    console.log(error);
     if (error) {
       setTimeout(() => {
         history('/');
