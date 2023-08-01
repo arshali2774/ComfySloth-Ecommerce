@@ -28,6 +28,7 @@ const CheckoutForm = () => {
   const [processing, setProcessing] = useState('');
   const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSecret] = useState('');
+  console.log(clientSecret);
   const stripe = useStripe();
   const elements = useElements();
 
@@ -54,8 +55,8 @@ const CheckoutForm = () => {
         '/.netlify/functions/create-payment-intent',
         JSON.stringify({ cart, shipping_fee, total_amount })
       );
-      console.log(data);
       setClientSecret(data.clientSecret);
+      console.log(clientSecret, 'addadaddd');
     } catch (error) {
       console.log(error.response);
     }
