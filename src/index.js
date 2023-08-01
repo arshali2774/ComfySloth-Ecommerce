@@ -12,13 +12,10 @@ import { Toaster } from 'react-hot-toast';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const domain = 'dev-pyp7yb6b16v7qeoa.us.auth0.com';
-const client_id = 'AtUO7TCpO6jBtEVzuN51aRFVKU7qUFtl';
-
 root.render(
   <Auth0Provider
-    domain={domain}
-    clientId={client_id}
+    domain={process.env.REACT_APP_AUTH_DOMAIN}
+    clientId={process.env.REACT_APP_CLIENT_ID}
     authorizationParams={{
       redirect_uri: window.location.origin,
     }}

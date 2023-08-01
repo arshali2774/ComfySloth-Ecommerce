@@ -6,3 +6,4 @@ export { default as Home } from './HomePage';
 export { default as Product } from './ProductsPage';
 export { default as SingleProduct } from './SingleProductPage';
 export { default as PrivateRoute } from './PrivateRoute';
+export { default as AuthWrapper } from './AuthWrapper';
